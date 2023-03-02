@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Proyecto</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="proyecto1.css">
+        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/44d9e7d50e/UntitledProject/style.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <header>
+      <div class="menu_bar">
+          <a href="#" class="bt-menu"><span class="icon-menu"></span>Menú</a>
+      </div>
+
+      <nav>
+          <ul>
+              <li><a href="index.html"><span class="icon-home"></span>Inicio</a></li>
+              <li><a href="cursos.html"><span class="icon-clipboard"></span>Cursos y certificados</a></li>
+              <li class="submenu">
+                  <a href="#"><span class="icon-books"></span>Proyectos<span class="caret icon-arrow-down6"></span></a>
+                  <ul class="children">
+                      <li><a href="proyecto1.html">Proyecto #1 <span class="icon-dot"></span></a></li>
+                      <li><a href="proyecto2.html">Proyecto #2 <span class="icon-dot"></span></a></li>
+                      <!--<li><a href="#">SubElemento #3 <span class="icon-dot"></span></a></li>-->
+                  </ul>
+              </li>
+              <li><a href="documentos/DídacTarragóLópez.pdf"><span class="icon-download3"></span>Descargar CV</a></li>
+              <li><a href="contacto.html"><span class="icon-envelop"></span>Contacto</a></li>
+          </ul>
+      </nav>
+  </header>
+
+    <section id="hero">
+        <div class="image-container" id="fondo">
+            <img src="imagenes/cabeceraProyectosJavaSQL.png" alt="Fondo"> 
+        </div>
+    </section> 
+
+    <div class="textoDescriptivo">
+    
+      <h2 class="tituloPrograma">Tienda online Java - SQL</h2>
+      <div class="linkGithub">
+        <li id="Github">
+          <a href="https://github.com/dtarragol/lostTienda" id="Github">
+            <img src="imagenes/github.png" alt="github">
+          </a>
+        </li>
+      </div><br>
+      
+      <p style="text-align: justify;">Es un programa hecho con java que almacena:<br>
+        - Clientes (premium y estándar, cada uno con sus respectivos descuentos automáticos).<br>
+        - Artículos (cada uno con sus gastos de envió y tiempo de producción).<br>
+        - Pedidos (registran artículos y un cliente), calculan el tiempo de producción total de los mismos 
+        y registras si están enviados(no se pueden enviar) o no enviados.<br>
+        El programa almacena los datos en una base de datos SQL y es capaz de generar tickets detallados.
+        Se han utilizado librerías como JUnit (para hacer tests) y el ORM hibernate.
+      </p> 
+      
+      <div id="logosLenguajes"style="display: flex; flex-wrap: wrap;">
+        <img src="imagenes/logojava.png" alt="imagenJava">
+        <img src="imagenes/logomysql.png" alt="imagenMySQL">
+      </div>
+
+    </div>
+
+    <div class="visor-imagenes">
+        <div class="buttons">
+            <button id="anterior">Anterior</button>
+            <button id="siguiente">Siguiente</button>
+        </div>
+        <img src="imagenes/programaLost/lost1.png" alt="Imagen 1" class="active">
+        <img src="imagenes/programaLost/lost2.png" alt="Imagen 2">
+        <img src="imagenes/programaLost/lost3.png" alt="Imagen 3">
+        
+    </div>   
+    
+    <script>
+        const imagenes = document.querySelectorAll(".visor-imagenes img");
+        const anterior = document.querySelector("#anterior");
+        const siguiente = document.querySelector("#siguiente");
+        let imagenActual = 0;
+        // Oculta todas las imágenes
+  function reset() {
+    for (let i = 0; i < imagenes.length; i++) {
+      imagenes[i].classList.remove("active");
+    }
+  }
+  
+  // Muestra la imagen actual
+  function startSlide() {
+    reset();
+    imagenes[imagenActual].classList.add("active");
+  }
+  
+  // Muestra la siguiente imagen
+  function nextSlide() {
+    reset();
+    imagenActual++;
+    if (imagenActual >= imagenes.length) {
+      imagenActual = 0;
+    }
+    imagenes[imagenActual].classList.add("active");
+  }
+  
+  // Muestra la imagen anterior
+  function prevSlide() {
+    reset();
+    imagenActual--;
+    if (imagenActual < 0) {
+      imagenActual = imagenes.length - 1;
+    }
+    imagenes[imagenActual].classList.add("active");
+  }
+  
+  // Eventos de clic para los botones
+  siguiente.addEventListener("click", nextSlide);
+  anterior.addEventListener("click", prevSlide);
+  
+  // Inicia el visor
+  startSlide();
+    </script>
+
+    <footer>
+        <a href="mailto:dtarragol@gmail.com" class="Contacto">
+            <span id="email">contacto: dtarragol@gmail.com</span>
+        </a>
+    </footer>
+</html>

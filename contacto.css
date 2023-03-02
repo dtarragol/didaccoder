@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+} 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.image-container {
+    display: flex;
+}
+
+.image-container img {
+    width: 100%;
+}
+header {
+    background: #ede8dd;
+    display: flex;
+    padding: 10px 50px; 
+}
+#logo {
+    width: 70px;
+}
+#logo img {
+    border-radius: 100%;
+    border: 2px solid #fff;
+}
+.MenuHorizontal {
+    position: relative;
+    float: right;
+    padding: 0;
+    margin: 0 auto;
+}
+nav {
+    width: 100%;
+    /*background-color: #fff;*/
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-bottom: 4px solid #f16132;
+    float: right;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    }
+  
+  nav ul li {
+    display:inline-block;
+    padding: 0 10px;
+  }
+  
+  nav a {
+    display: block;
+    padding: 15px 10px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  nav a:hover{
+    color: #f16132;
+  }
+  .opciones a:hover {
+    color: #000000;
+  }
+  
+  nav ul ul {
+    display: none;
+    position: absolute; 
+    top: 100%; 
+  }
+  
+  nav ul li:hover > ul {
+    display:inherit;
+  }
+  
+  nav ul ul ul {
+    margin-left: 100%; 
+    top:0; 
+  }
+
+.boton-desplegable {
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+.boton-desplegable span {
+  margin-right: 10px;
+}
+.opciones {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.boton-desplegable:hover .opciones {
+  display: block;
+}
+#hero {
+    position: relative;
+    display: flex;
+    vertical-align: bottom;
+}
+#hero #fondo {
+    display: inline-block;
+    width: 100%;
+    background: #e7d7b5;
+}
+.formularioContacto #textoContacto {
+  margin-left: 50px;
+  margin-bottom: 10px;
+  color: #000000;
+}
+.social-icon {
+  width: 70px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 5px;
+
+}
+main {
+  background: #e7d7b5;
+  color:#000000 ;
+}
+.formularioContacto #botonEnviar {
+  right: 10px;
+  background-color: #f16132;;
+  border: none;
+  color: #000000;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+footer .Contacto {
+  display:  flex;
+  justify-content: center;
+  padding: 20px;
+  background: #000000;
+  text-decoration: none;
+}
+footer .Contacto #email{
+  color: #fff;
+}
